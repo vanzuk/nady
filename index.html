@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт преподавателя</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Вертикальная панель слева -->
+        <nav class="side-panel">
+            <div class="panel-content">
+                <button class="panel-button" onclick="scrollToTop()">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Наверх</span>
+                </button>
+                <button class="panel-button" data-target="#about">
+                    <i class="fas fa-user"></i>
+                    <span>Обо мне</span>
+                </button>
+                <button class="panel-button" data-target="#diplomas">
+                    <i class="fas fa-award"></i>
+                    <span>Дипломы</span>
+                </button>
+                <button class="panel-button" data-target="#courses">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Курсы</span>
+                </button>
+                <button class="panel-button" data-target="#contacts">
+                    <i class="fas fa-envelope"></i>
+                    <span>Контакты</span>
+                </button>
+                <button class="panel-button" onclick="location.href='mailto:teacher@example.com'">
+                    <i class="fas fa-at"></i>
+                    <span>Написать</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <section id="main" class="hero">
+                <h1>Боброва Татьяна Николаевна</h1>
+                <p>Преподаватель информатики</p>
+            </section>
+
+            <!-- Раздел "Обо мне" -->
+            <div class="about-me">
+                <h2>Обо мне</h2>
+                <img src="img/NXUOK_ajMqc.jpg" alt="Фото Татьяны Бобровой" class="profile-image">
+                <p>Я, Боброва Татьяна Николаевна, родилась 25 февраля 1988 года в городе Молодогвардейске, Краснодонский район, Луганской области. Закончила школу №7 в 2006 году в г. Молодогвардейске. Семейное положение – замужем, двое детей.</p>
+            </div>
+
+            <!-- Блок с карточками и кнопками -->
+            <div class="about-section">
+                <div class="sidebar">
+                    <h3>Боковая панель</h3>
+                    <p>Здесь может быть дополнительная информация или навигация.</p>
+                </div>
+                <div class="content">
+                    <div class="navigation-buttons">
+                        <button onclick="prevCard()" class="nav-button left">&#9664;</button>
+                        <button onclick="nextCard()" class="nav-button right">&#9654;</button>
+                    </div>
+                    <div class="card-container">
+                        <div class="card">
+                            <h3>Личные данные</h3>
+                            <p>ФИО: Боброва Татьяна Николаевна</p>
+                            <p>Дата рождения: 25 февраля 1988 года</p>
+                            <p>Место рождения: Молодогвардейск, Краснодонский район, Луганская область</p>
+                            <p>Семейное положение: Замужем, двое детей</p>
+                        </div>
+                        <div class="card">
+                            <h3>Образование</h3>
+                            <p>Среднее образование: Окончила школу №7 в Молодогвардейске в 2006 году.</p>
+                            <p>Высшее образование: Поступила в Луганский государственный университет им. В. Даля на специальность экономика в 2006 году. Окончила университет в 2011 году, получив степень магистра. Во время учебы углубленно изучала математику и экономику, интересуясь как теоретическими аспектами, так и их практическим применением.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Профессиональная деятельность</h3>
+                            <p>Начало карьеры: После получения магистерской степени решила стать учителем. В 2019 году поступила в Сальский институт Южного Университета на специальность «Преподавание начальных классов». В 2020 году получила диплом о профессиональной переподготовке «Учитель начальных классов».</p>
+                        </div>
+                        <div class="card">
+                            <h3>Работа в образовании</h3>
+                            <p>С 2020 года работала в МБОУ Средняя общеобразовательная школа №1 в ст. Егорлыкская на должности старшей вожатой и педагога дополнительного образования. В 2022 году поступила в Таганрогский институт имени А. П. Чехова на факультет физики, математики и информатики для получения специальности «Учитель информатики». С 2023 года начала преподавать информационные дисциплины в АН ПОО «Егорлыкский колледж», включая курсы по программированию, работе с компьютером и созданию веб-сайтов.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Повышение квалификации</h3>
+                            <p>Участвует в семинарах и тренингах для преподавателей, изучая новые технологии и методы обучения. Приняла участие в образовательном мероприятии «Зимний Педсовет», организованном Центром знаний «Машук», где изучала инструменты развития мозга и мышления.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Участие в конференциях</h3>
+                            <p>Приняла участие в конференции OpenConf 2024, которая объединяет экспертов и специалистов из области информационных технологий.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Образовательная философия</h3>
+                            <p>Татьяна стремится создавать интересные и вовлекающие уроки с использованием интерактивных методов и технологий. Она помогает ученикам развивать критическое мышление и навыки решения проблем, гордясь своим вкладом в образование и подготовкой студентов к будущим вызовам в сфере информационных технологий.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="diplomas" class="diplomas">
+                <h2>Дипломы и сертификаты</h2>
+                <div class="diplomas-grid">
+                    <div class="diploma-card">
+                        <a href="img/sertificat_434634/gho.jpg" target="_blank" class="diploma-link">
+                            <img src="img/sertificat_434634/gho.jpg" alt="Диплом 1">
+                            <div class="diploma-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                        <div class="diploma-info">
+                            <h3>Удостоверение о повышении квалификации</h3>
+                            <p>2021 год</p>
+                        </div>
+                    </div>
+
+                    <div class="diploma-card">
+                        <a href="img/sertificat_434634/pov cval 2 стр.jpg" target="_blank" class="diploma-link">
+                            <img src="img/sertificat_434634/pov cval 2 стр.jpg" alt="Диплом 2">
+                            <div class="diploma-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                        <div class="diploma-info">
+                            <h3>Удостоверение о повышении квалификации</h3>
+                            <p>2022 год</p>
+                        </div>
+                    </div>
+
+                    <div class="diploma-card">
+                        <a href="img/sertifikat/photo_5319164847335788762_y.jpg" target="_blank" class="diploma-link">
+                            <img src="img/sertifikat/photo_5319164847335788762_y.jpg" alt="Сертификат">
+                            <div class="diploma-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                        <div class="diploma-info">
+                            <h3>Удостоверение о повышении квалификации</h3>
+                            <p>2023 год</p>
+                        </div>
+                    </div>
+
+                    <div class="diploma-card">
+                        <a href="img/sertifikat/123.png" target="_blank" class="diploma-link">
+                            <img src="img/sertifikat/123.png" alt="Диплом 4">
+                            <div class="diploma-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                        <div class="diploma-info">
+                            <h3>Сертификат MOTION-Дизайнер</h3>
+                            <p>2021 год</p>
+                        </div>
+                    </div>
+
+                    <div class="diploma-card">
+                        <a href="img/sertifikat/234.jpg" target="_blank" class="diploma-link">
+                            <img src="img/sertifikat/234.jpg" alt="Диплом 5">
+                            <div class="diploma-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                        <div class="diploma-info">
+                            <h3>Сертификат </h3>
+                            <p>2022 год</p>
+                        </div>
+                    </div>
+
+                    <div class="diploma-card">
+                        <a href="img/sertifikat/456.jpg" target="_blank" class="diploma-link">
+                            <img src="img/sertifikat/456.jpg" alt="Диплом 6">
+                            <div class="diploma-overlay">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </a>
+                        <div class="diploma-info">
+                            <h3>Сертификат</h3>
+                            <p>2023 год</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="courses" class="courses">
+                <h2>Мои курсы</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="img/course1.jpg" alt="Программирование">
+                        </div>
+                        <div class="course-info">
+                            <h3>Основы программирования</h3>
+                            <p>Базовый курс для начинающих программистов. Изучние основных концепций и языков программирования.</p>
+                            <ul class="course-details">
+                                <li><i class="fas fa-clock"></i> 3 месяца</li>
+                                <li><i class="fas fa-level-up-alt"></i> Начальный уровень</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="img/course2.jpg" alt="Веб-разработка">
+                        </div>
+                        <div class="course-info">
+                            <h3>Веб-разработка</h3>
+                            <p>Создание современных веб-сайтов с использованием HTML, CSS и JavaScript.</p>
+                            <ul class="course-details">
+                                <li><i class="fas fa-clock"></i> 4 месяца</li>
+                                <li><i class="fas fa-level-up-alt"></i> Средний уровень</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="img/course3.jpg" alt="Базы данных">
+                        </div>
+                        <div class="course-info">
+                            <h3>Базы данных</h3>
+                            <p>Проектирование и работа с базами данных, SQL и системы управления БД.</p>
+                            <ul class="course-details">
+                                <li><i class="fas fa-clock"></i> 2 месяца</li>
+                                <li><i class="fas fa-level-up-alt"></i> Продвинутый уровень</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacts" class="contacts">
+                <h2>Контакты</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: teacher@example.com</p>
+                    <p><i class="fas fa-phone"></i> Телефон: +7 (999) 123-45-67</p>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2024 Сайт преподавателя. Все права защищены.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Добавьте модальное окно в конец body -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        document.querySelectorAll('.panel-button[data-target]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Получаем позицию элемента
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - 50; // Отступ 50px сверху
+
+                    // Плавный скролл
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Получаем элементы модального окна
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.getElementsByClassName('modal-close')[0];
+
+        // Обновляем обработчики для всех ссылок с дипломами
+        document.querySelectorAll('.diploma-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Отеняем стандарное поведение ссылки
+                modal.style.display = "block";
+                modalImg.src = this.href; // Используем полноразмерное изображение
+            });
+        });
+
+        // Закрытие по клику на крестик
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Закрытие по клику вне изображения
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Закрытие по клавише Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.style.display = "none";
+            }
+        });
+
+        let currentCardIndex = 0;
+
+        function showCard(index) {
+            const cards = document.querySelectorAll('.card');
+            const totalCards = cards.length;
+            if (index >= 0 && index < totalCards) {
+                const offset = -index * 100;
+                cards.forEach(card => {
+                    card.style.transform = `translateX(${offset}%)`;
+                });
+                currentCardIndex = index;
+            }
+        }
+
+        function prevCard() {
+            showCard(currentCardIndex - 1);
+        }
+
+        function nextCard() {
+            showCard(currentCardIndex + 1);
+        }
+
+        // Инициализация первой карточки
+        showCard(currentCardIndex);
+    </script>
+</body>
+</html>
