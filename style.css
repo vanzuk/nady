@@ -148,6 +148,7 @@ footer {
     --background-light: #f9f9f9;
     --hover-color: #5e4f34;
     --transition: all 0.3s ease;
+    --side-panel-color: #292a69;
 }
 
 * {
@@ -207,6 +208,7 @@ section {
     padding: 6rem 2rem; /* Уменьшено с 8rem до 6rem */
     margin: 0 auto;
     max-width: 800px; /* Добавлено ограничение ширины */
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -385,19 +387,6 @@ section h2::after {
     margin: 1rem auto;
 }
 
-/* Стили для боковой панели */
-.side-panel {
-    width: 180px;
-    background: var(--primary-color);
-    padding: 15px;
-    position: fixed;
-    left: 20px;
-    top: 30%;
-    transform: translateY(-30%);
-    border-radius: 15px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    height: auto;
-}
 
 .panel-content {
     display: flex;
@@ -562,7 +551,7 @@ section h2::after {
     }
 }
 
-/* Дополнительный медиа-запрос для очень маленьких экранов */
+/* Допонительный меиа-запрос для очень маленьких экранов */
 @media (max-width: 480px) {
     .panel-content {
         flex-direction: column;
@@ -671,12 +660,19 @@ section h2::after {
 
 /* Боковая панель */
 .side-panel {
-    width: 180px; /* Немного уменьшена ширина панели */
-    background: var(--primary-color);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    width: 250px; /* Установите желаемую ширину */
+    height: auto; /* Убедитесь, что высота не фиксирована */
+    background: linear-gradient(135deg, #f88084, #fa9e84); /* Градиент */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Фиксированное позиционирование */
+    top: 50%; /* Позиционирование по вертикали */
+    left: 15px; /* Отступ от левого края */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    overflow-y: auto; /* Добавьте прокрутку, если содержимое превышает высоту */
+    max-height: 100vh; /* Ограничьте максимальную высоту */
 }
 
 .panel-content {
@@ -1155,10 +1151,13 @@ footer {
 }
 
 .about-me {
+    overflow: hidden; /* Скрыть содержимое, выходящее за границы */
+    max-width: 100%; /* Убедиться, что ширина не превышает родительский блок */
     margin-bottom: 20px;
     font-family: 'Roboto', sans-serif; /* Замените на ваш шрифт */
     color: #444; /* Основной цвет текста */
     text-align: center; /* Центрирование текста */
+    position: relative; /* Для позиционирования кнопок */
 }
 
 .profile-image {
@@ -1171,42 +1170,26 @@ footer {
 }
 
 .about-section {
-    display: flex;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    max-width: 1000px;
-}
-
-.sidebar {
-    width: 200px;
-    background-image: linear-gradient(to bottom, #007BFF, #00BFFF, #00FF7F); /* Градиент для боковой панели */
-    border-radius: 10px;
-    padding: 20px;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin-right: 20px;
-}
-
-.content {
-    flex-grow: 1;
+    overflow: hidden;
+    max-width: 100%;
     position: relative;
+    padding: 20px;
 }
 
 .card-container {
     display: flex;
-    overflow: hidden;
-    position: relative;
+    transition: transform 0.3s ease-in-out;
+    width: 100%; /* Убедитесь, что контейнер занмает всю ирину */
 }
 
 .card {
-    min-width: 100%;
-    padding: 40px 20px;
+    flex: 0 0 100%; /* Каждая карточка занимает всю ширину контейнера */
     box-sizing: border-box;
-    transition: transform 0.3s ease-in-out;
-    background-color: #f7f7f7;
+    padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Убираем отступы */
 }
 
 .navigation-buttons {
@@ -1222,7 +1205,7 @@ footer {
 .nav-button {
     background-color: #ffffff;
     color: #007BFF;
-    border: 3px solid #007BFF;
+    border: 2px solid #007BFF;
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -1233,7 +1216,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
 }
 
 .nav-button:hover {
@@ -1242,9 +1225,9 @@ footer {
 }
 
 .nav-button.left {
-    left: 10px;
+    margin-left: -20px;
 }
 
 .nav-button.right {
-    right: 10px;
+    margin-right: -20px;
 }
