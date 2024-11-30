@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -202,7 +202,7 @@ section {
 /* Секция героя */
 /* Секция героя */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(347deg, #cd4d4d, #c134db);
     color: white;
     text-align: center;
     padding: 6rem 2rem; /* Уменьшено с 8rem до 6rem */
@@ -297,7 +297,7 @@ section {
 
 /* Секция контактов */
 .contacts {
-    background-color: var(--background-light);
+    background-color: #f9c8ba;
     text-align: center;
 }
 
@@ -314,7 +314,7 @@ section {
 
 /* Футер */
 footer {
-    background-color: var(--primary-color);
+    background: linear-gradient(347deg, #cd4d4d, #c134db);
     color: white;
     text-align: center;
     padding: 2rem;
@@ -381,9 +381,9 @@ section h2 {
 section h2::after {
     content: '';
     display: block;
-    width: 50px;
+    width: 100px;
     height: 3px;
-    background-color: var(--secondary-color);
+    background-color: #ff04ef;
     margin: 1rem auto;
 }
 
@@ -778,7 +778,7 @@ footer {
 /* Стили для раздела дипломов */
 .diplomas {
     padding: 40px 20px;
-    background: #f9f9f9;
+    background: #f99fb0;
     margin: 40px 0;
 }
 
@@ -1161,9 +1161,9 @@ footer {
 }
 
 .profile-image {
-    max-width: 200px; /* Максимальная ширина изображения */
+    max-width: 300px; /* Максимальная ширина изображения */
     height: auto;
-    border-radius: 50%; /* Скругленные края для аватара */
+    border-radius: 10%; /* Скругленные края для аватара */
     display: block;
     margin: 0 auto 20px; /* Центрирование изображения и отступ снизу */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
@@ -1173,7 +1173,7 @@ footer {
     overflow: hidden;
     max-width: 100%;
     position: relative;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .card-container {
@@ -1185,8 +1185,8 @@ footer {
 .card {
     flex: 0 0 100%; /* Каждая карточка занимает всю ширину контейнера */
     box-sizing: border-box;
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: 20px 60px;
+    background-color: #f99fb0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0; /* Убираем отступы */
@@ -1195,7 +1195,8 @@ footer {
 .navigation-buttons {
     position: absolute;
     top: 50%;
-    width: 100%;
+    left: 2%;
+    width: 96%;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
@@ -1203,13 +1204,13 @@ footer {
 }
 
 .nav-button {
-    background-color: #ffffff;
-    color: #007BFF;
-    border: 2px solid #007BFF;
-    width: 40px;
-    height: 40px;
+    background-color: #f99fb0;
+    color: #ff2093c4;
+    border: 2px solid hsla(329, 97%, 72%, 0.596);
+    width: 30px;
+    height: 130px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 1.3s, color 1.3s;
     font-size: 20px;
     pointer-events: all;
     z-index: 10;
@@ -1220,7 +1221,7 @@ footer {
 }
 
 .nav-button:hover {
-    background-color: #007BFF;
+    background-color: #ff2093c4;
     color: #ffffff;
 }
 

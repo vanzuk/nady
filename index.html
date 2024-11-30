@@ -17,7 +17,7 @@
                     <i class="fas fa-arrow-up"></i>
                     <span>Наверх</span>
                 </button>
-                <button class="panel-button" data-target="#about">
+                <button class="panel-button" data-target="#about" onclick="scrollToSection('#about')">
                     <i class="fas fa-user"></i>
                     <span>Обо мне</span>
                 </button>
@@ -48,10 +48,14 @@
             </section>
 
             <!-- Раздел "Обо мне" -->
-            <div class="about-me">
-                <h2>Обо мне</h2>
-                <img src="img/NXUOK_ajMqc.jpg" alt="Фото Татьяны Бобровой" class="profile-image">
-                <p>Я, Боброва Татьяна Николаевна, родилась 25 февраля 1988 года в городе Молодогвардейске, Краснодонский район, Луганской области. Закончила школу №7 в 2006 году в г. Молодогвардейске. Семейное положение – замужем, двое детей.</p>
+            <div id="about" class="about-me" >
+                
+                <h3 style="font-size: 2.5em; font-weight: bold; color: white; padding: 10px; border-radius: 5px;">Обо мне</h3>
+                <div style="position: absolute;top: 78px;left: 437px;right: 437px;bottom: 149px;background-image: url('img/ditsy-flowers-vector-seamless-pattern-vintage-floral-pattern-design-retro-botanical-background_490768-780.jpg');background-size: cover;border-radius: 10%;z-index: 0;"></div>
+                <img src="img/NXUOK_ajMqc.jpg" alt="Фото Татьяны Бобровой" class="profile-image" style="border-radius: 10%;width: auto;height: 350px;position: relative;z-index: 1;">
+                <p style="font-size: 1.5em; font-weight: bold; color: white; padding: 10px; border-radius: 5px;">
+                    Я, Боброва Татьяна Николаевна, родилась 25 февраля 1988 года в городе Молодогвардейске, Краснодонский район, Луганской области. Закончила школу №7 в 2006 году в г. Молодогвардейске. Семейное положение – замужем, двое детей.
+                </p>
             </div>
 
             <!-- Блок с карточками и кнопками -->
@@ -61,7 +65,7 @@
                         <h3>Личные данные</h3>
                         <p>ФИО: Боброва Татьяна Николаевна</p>
                         <p>Дата рождения: 25 февраля 1988 года</p>
-                        <p>Место рождения: Молодогвардейск, Краснодонский район, Луганская область</p>
+                        <p>Место рожд��ния: Молодогвардейск, Краснодонский район, Луганская область</p>
                         <p>Семейное положение: Замужем, двое детей</p>
                     </div>
                     <div class="card">
@@ -119,7 +123,7 @@
                             </div>
                         </a>
                         <div class="diploma-info">
-                            <h3>Удостоверение о повышении квалификации</h3>
+                            <h3>Удостоверение о повышении кв��лификации</h3>
                             <p>2023 год</p>
                         </div>
                     </div>
@@ -165,52 +169,7 @@
                 </div>
             </section>
 
-            <section id="courses" class="courses">
-                <h2>Мои курсы</h2>
-                <div class="courses-grid">
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="img/course1.jpg" alt="Программирование">
-                        </div>
-                        <div class="course-info">
-                            <h3>Основы программирования</h3>
-                            <p>Базовый курс для начинающих программистов. Изучние основных концепций и языков программирования.</p>
-                            <ul class="course-details">
-                                <li><i class="fas fa-clock"></i> 3 месяца</li>
-                                <li><i class="fas fa-level-up-alt"></i> Начальный уровень</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="img/course2.jpg" alt="Веб-разработка">
-                        </div>
-                        <div class="course-info">
-                            <h3>Веб-разработка</h3>
-                            <p>Создание современных веб-сайтов с использованием HTML, CSS и JavaScript.</p>
-                            <ul class="course-details">
-                                <li><i class="fas fa-clock"></i> 4 месяца</li>
-                                <li><i class="fas fa-level-up-alt"></i> Средний уровень</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="course-card">
-                        <div class="course-image">
-                            <img src="img/course3.jpg" alt="Базы данных">
-                        </div>
-                        <div class="course-info">
-                            <h3>Базы данных</h3>
-                            <p>Проектирование и работа с базами данных, SQL и системы управления БД.</p>
-                            <ul class="course-details">
-                                <li><i class="fas fa-clock"></i> 2 ��есяца</li>
-                                <li><i class="fas fa-level-up-alt"></i> Продвинутый уровень</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
 
             <section id="contacts" class="contacts">
                 <h2>Контакты</h2>
@@ -233,21 +192,25 @@
     </div>
 
     <script>
+        function scrollToSection(targetId) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - 50; // Отступ 50px сверху
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Обновляем обработчики для всех кнопок с data-target
         document.querySelectorAll('.panel-button[data-target]').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('data-target');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - 50; // Отступ 50px сверху
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+                scrollToSection(targetId);
             });
         });
 
